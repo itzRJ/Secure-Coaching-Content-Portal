@@ -1,0 +1,21 @@
+---
+alwaysApply: true
+description: Project gates, evidence, scope, security, and completion rules
+---
+
+# Project governance
+
+- Read `AGENTS.md`, the requirements, HLD, LLD, and progress checklist before
+  planning or changing the system.
+- Never treat a proposed value or unchecked checklist item as approved.
+- Do not cross a requirements, architecture, planning, implementation, or
+  release gate without explicit approval and recorded evidence.
+- Verify claims against source, configuration, tests, and current documents.
+  Label assumptions and report conflicts.
+- Make the smallest coherent approved change. Avoid speculative refactors.
+- Never expose secrets, tokens, protected content, signed URLs, or production
+  data in code, logs, prompts, tests, or artifacts.
+- Update contracts, tests, documentation, observability, and runbooks with
+  behavior changes.
+- Follow the canonical standards in `docs/engineering/`.
+- A task is not done until applicable checks pass and evidence is reported.

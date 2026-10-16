@@ -1,0 +1,28 @@
+---
+globs:
+  - "**/*Test.java"
+  - "**/*Tests.java"
+  - "**/*.{test,spec}.{ts,tsx}"
+  - "**/test/**/*.{java,ts,tsx}"
+  - "**/tests/**/*.{java,ts,tsx}"
+description: Behavior-first testing and mandatory quality gates
+---
+
+# Testing and quality
+
+Follow `docs/engineering/testing-quality-gates.md`.
+
+- Test observable behavior with positive, negative, boundary, authorization,
+  failure, expiry, and retry cases as applicable.
+- Keep tests deterministic, isolated, order-independent, and explicit about
+  UTC time.
+- Do not add assertion-free coverage tests.
+- Do not disable or weaken a test to bypass a defect, compilation problem,
+  stubbing issue, visibility issue, or flakiness.
+- Parameterize data-only variations; keep distinct behaviors separate.
+- Verify coverage from generated reports rather than estimating it.
+- Required thresholds are 80% overall coverage, 90% new-code coverage, no new
+  blocker/critical Sonar findings, and no more than 3% duplication.
+- Generated/configuration exclusions require documented review.
+- Report test commands, results, coverage, limitations, and applicable
+  security/accessibility/performance/recovery evidence.

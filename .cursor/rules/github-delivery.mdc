@@ -1,0 +1,31 @@
+---
+globs:
+  - ".github/**/*"
+  - "infrastructure/**/*"
+  - "**/Dockerfile"
+  - "**/Dockerfile.*"
+  - "**/*.sh"
+description: GitHub Actions, infrastructure, scripts, release, and deployment rules
+---
+
+# GitHub delivery
+
+Follow `docs/engineering/github-cicd.md`.
+
+- Protect default and production branches and require peer approval plus all
+  applicable checks.
+- Use least-privilege workflow permissions, pinned action SHAs, timeouts, and
+  concurrency controls.
+- Use GitHub OpenID Connect for short-lived AWS access. Do not store long-lived
+  AWS keys.
+- Never expose secrets to untrusted pull-request workflows.
+- Build once, scan, identify artifacts immutably, and promote the same artifact
+  through environments.
+- Keep development, staging, and production isolated.
+- Rehearse migrations and rollback in staging and protect production with
+  manual approval.
+- Use reviewed infrastructure-as-code.
+- Shell scripts use Bash strict mode, quoted expansions, validated input,
+  meaningful exit codes, and ShellCheck.
+- Every release records artifacts, migrations, approvals, checks, owner,
+  verification, and rollback evidence.

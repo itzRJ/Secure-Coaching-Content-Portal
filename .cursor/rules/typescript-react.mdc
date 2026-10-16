@@ -1,0 +1,28 @@
+---
+globs:
+  - "apps/web/**/*.{ts,tsx}"
+  - "apps/mobile/**/*.{ts,tsx}"
+  - "packages/**/*.{ts,tsx}"
+description: Strict TypeScript, Next.js, React, and React Native rules
+---
+
+# TypeScript and React clients
+
+Follow `docs/engineering/development-standards.md` and
+`docs/engineering/testing-quality-gates.md`.
+
+- Keep strict TypeScript enabled and avoid `any`.
+- Run ESLint, Prettier, type checking, tests, and production builds.
+- Use `const` by default, strict equality, immutable inputs/state, and
+  validated external payloads.
+- Keep components and hooks pure during render. Follow the Rules of Hooks and
+  clean up effects, subscriptions, listeners, timers, and in-flight work.
+- Use typed props; do not add PropTypes.
+- Keep authentication secrets out of browser storage and general mobile
+  storage. Mobile refresh credentials belong only in Keychain/Keystore.
+- Never make authorization decisions in a client.
+- Preserve keyboard, screen-reader, focus, contrast, touch-target, and
+  reduced-motion accessibility.
+- Do not render unsanitized HTML or persist protected page imagery.
+- Test loading, empty, offline, retry, forbidden, expired, revoked, and
+  processing states.

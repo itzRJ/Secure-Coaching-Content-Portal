@@ -1,0 +1,30 @@
+---
+globs:
+  - "apps/api/**/*.java"
+  - "apps/document-worker/**/*.java"
+description: Java 21 and Spring Boot implementation rules
+---
+
+# Java and Spring
+
+Follow `docs/engineering/development-standards.md` and
+`docs/engineering/testing-quality-gates.md`.
+
+- Keep package-by-feature and controller/application/domain/infrastructure
+  boundaries from `LLD.md`.
+- Controllers never access repositories directly, and persistence entities
+  never become API responses.
+- Use constructor injection, explicit imports, standard Java naming, UTF-8/LF,
+  immutable dependencies, and the project formatter.
+- Keep transactions in application services. Make queue publication and
+  critical audit writes transactionally consistent.
+- Enforce permission, organization, and object-level authorization at the
+  application boundary and resource policy.
+- Use safe repository APIs, parameterized queries, validated paths, bounded
+  executors/queues/retries, and try-with-resources.
+- Use structured, correlation-aware, redacted logging. Do not log and rethrow
+  the same failure at every layer.
+- Update OpenAPI and contract tests with API changes. Do not hand-edit
+  generated clients.
+- Use JUnit 5, modern Mockito, and JaCoCo. Test behavior, authorization,
+  boundaries, failures, retries, and idempotency.
